@@ -24,7 +24,10 @@
   <br /><br />
   {{ convocatorias }}
 
-  <h3> Nota final: {{ notaFinal }}</h3>
+  <h3> Nota final: 
+    <span v-if="notaFinal < 5" class="suspenso">{{ notaFinal }}</span>
+    <span v-else class="aprobado">{{ notaFinal }}</span>
+  </h3>
 </template>
 
 <script>
@@ -92,6 +95,14 @@ div.row {
   gap: 100px;
   align-items: center;
   justify-content: start;
+}
+
+.suspenso {
+  color: rgb(184, 6, 6); 
+}
+
+.aprobado {
+  color: rgb(21, 150, 9); 
 }
 
 </style>
