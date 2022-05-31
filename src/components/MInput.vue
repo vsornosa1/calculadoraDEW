@@ -1,7 +1,7 @@
 <template>
   <label>
     {{ label }}
-    <input @keyup.enter="$emit(convocatoria, convocatoria, $event.target.value)" type="number" min="0" max="10" step="0.01" placeholder="Ej: 6.1" />
+    <input @focusout="$emit(convocatoria, convocatoria, $event.target.value)" @keyup.enter="$emit(convocatoria, convocatoria, $event.target.value)" type="number" min="0" max="10" step="0.01" placeholder="Ej: 6.1" />
   </label>
 </template>
 
